@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.wedding.ui.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_dekor"
+        android:name="com.example.wedding.ui.Sala"
+        tools:layout="@layout/fragment_sala" />
+
+    <fragment
+        android:id="@+id/nav_sala"
+        android:name="com.example.wedding.ui.Fotograf"
+        tools:layout="@layout/fragment_foto" />
+
+    <fragment
+        android:id="@+id/nav_foto"
+        android:name="com.example.wedding.ui.Dekoracija"
+        tools:layout="@layout/fragment_dekoracija" />
+
+    <fragment
+        android:id="@+id/nav_garderoba"
+        android:name="com.example.wedding.ui.Garderoba"
+        tools:layout="@layout/fragment_garderoba" />
+
+    <fragment
+        android:id="@+id/nav_pozivnice"
+        android:name="com.example.wedding.ui.Pozivnice"
+        tools:layout="@layout/fragment_pozivnice" />
+</navigation>

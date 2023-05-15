@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstTimeOpen">
+
+
+    <EditText
+        android:id="@+id/mlada"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="79dp"
+        android:textColorHint="#000000"
+        android:hint="Mlada"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/mladozenja"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="34dp"
+        android:textColorHint="#000000"
+        android:hint="Mladoženja"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mlada" />
+
+    <EditText
+        android:id="@+id/idTVSelectedDate"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="34dp"
+        android:hint="Datum ceremonije"
+        android:inputType="text|textEmailAddress"
+        android:maxLines="1"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mladozenja" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="52dp"
+        android:text="Dobrodošli u Weddie aplikaciju!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="58dp"
+        android:text="Za početak, unesite sledeće podatke:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <!--on below line we are creating a text view-->
+
+    <!--on below line we are creating
+        a button for date picker-->
+
+    <Button
+        android:id="@+id/idBtnPickDate"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="240dp"
+        android:text="Izaberi"
+        app:layout_constraintStart_toEndOf="@+id/idTVSelectedDate"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="388dp"
+        android:text="Dalje"
+        app:layout_constraintStart_toEndOf="@+id/idTVSelectedDate"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="129dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="-20dp"
+        app:layout_constraintStart_toEndOf="@+id/mladozenja"
+        app:layout_constraintTop_toBottomOf="@+id/mlada"
+        app:srcCompat="@drawable/on" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="131dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="-20dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toEndOf="@+id/mlada"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/ona" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
