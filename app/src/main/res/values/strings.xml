@@ -11,5 +11,10 @@
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
+    <string-array name="foto_radnje">
+        <item>- - - - - - - - -</item>
+        <item>Foto Stanko</item>
+        <item>Foto Tomić</item>
+        <item>4Pixel Studio</item>
+    </string-array>
 </resources>

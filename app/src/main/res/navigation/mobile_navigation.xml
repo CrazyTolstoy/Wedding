@@ -11,17 +11,17 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_dekor"
+        android:id="@+id/nav_sala"
         android:name="com.example.wedding.ui.Sala"
         tools:layout="@layout/fragment_sala" />
 
     <fragment
-        android:id="@+id/nav_sala"
+        android:id="@+id/nav_foto"
         android:name="com.example.wedding.ui.Fotograf"
         tools:layout="@layout/fragment_foto" />
 
     <fragment
-        android:id="@+id/nav_foto"
+        android:id="@+id/nav_dekor"
         android:name="com.example.wedding.ui.Dekoracija"
         tools:layout="@layout/fragment_dekoracija" />
 
