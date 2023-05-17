@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,8 @@ public class Pozivnice extends Fragment {
     private ImageAdapter adapter;
     private List<Integer> imageList;
     private FragmentPozivniceBinding binding;
+    private int previousImageId = -1;
+    private TextView cijena;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,20 +34,45 @@ public class Pozivnice extends Fragment {
         View root = binding.getRoot();
         recyclerView = root.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        cijena = root.findViewById(R.id.cena);
 
         imageList = new ArrayList<>();
-        imageList.add(getResources().getIdentifier("s15","drawable", "com.example.wedding.ui"));
-        imageList.add(getResources().getIdentifier("16","drawable", "com.example.wedding.ui"));
-        imageList.add(getResources().getIdentifier("17","drawable", "com.example.wedding.ui"));
-        imageList.add(getResources().getIdentifier("18","drawable", "com.example.wedding.ui"));
-        imageList.add(getResources().getIdentifier("19","drawable", "com.example.wedding.ui"));
-        imageList.add(getResources().getIdentifier("20","drawable", "com.example.wedding.ui"));
-        imageList.add(getResources().getIdentifier("21","drawable", "com.example.wedding.ui"));
+        imageList.add(R.drawable.p15);
+        imageList.add(R.drawable.p16);
+        imageList.add(R.drawable.p17);
+        imageList.add(R.drawable.p18);
+        imageList.add(R.drawable.p19);
+        imageList.add(R.drawable.p20);
+        imageList.add(R.drawable.p21);
         ImageAdapter.OnItemClickListener itemClickListener = new ImageAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int imageId) {
-                Toast.makeText(getActivity(), "Neispravni podaci za polje 'Godina'!"+imageId, Toast.LENGTH_LONG).show();
-
+                if (previousImageId != imageId) {
+                    switch (imageId) {
+                        case R.drawable.p15:
+                            cijena.setText("Cijena: 20 KM");
+                            break;
+                        case R.drawable.p16:
+                            cijena.setText("Cijena: 24 KM");
+                            break;
+                        case R.drawable.p17:
+                            cijena.setText("Cijena: 22 KM");
+                            break;
+                        case R.drawable.p18:
+                            cijena.setText("Cijena: 19 KM");
+                            break;
+                        case R.drawable.p19:
+                            cijena.setText("Cijena: 40 KM");
+                            break;
+                        case R.drawable.p20:
+                            cijena.setText("Cijena: 21 KM");
+                            break;
+                        case R.drawable.p21:
+                            cijena.setText("Cijena: 23 KM");
+                            break;
+                    }
+                    previousImageId = imageId;
+                }
             }
         };
 
