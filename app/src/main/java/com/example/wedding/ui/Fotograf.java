@@ -58,11 +58,7 @@ public class Fotograf extends Fragment {
                     case 1:
                         recyclerView.setVisibility(root.VISIBLE);
                         imageList = new ArrayList<>();
-                        imageList.add(R.drawable.salon4);
-                        imageList.add(R.drawable.salon1);
-                        imageList.add(R.drawable.salon2);
-                        imageList.add(R.drawable.salon3);
-                        imageList.add(R.drawable.salon4);
+                        imageList.add(R.drawable.foto);
                         ImageAdapter.OnItemClickListener itemClickListener1 = new ImageAdapter.OnItemClickListener() {
                             @Override
                             public void onItemClick(int imageId) {
