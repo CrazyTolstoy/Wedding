@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,11 +15,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.preference.PreferenceManager;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.example.wedding.databinding.ActivityFirstTimeOpenBinding;
 
@@ -30,18 +26,20 @@ public class FirstTimeOpen extends AppCompatActivity {
 
     private ActivityFirstTimeOpenBinding binding;
     private EditText selectedDateTV,mladaT,mladozenjaT;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityFirstTimeOpenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         mladaT=findViewById(R.id.mlada);
         mladozenjaT=findViewById(R.id.mladozenja);
         Button pickDateBtn = findViewById(R.id.idBtnPickDate);
         selectedDateTV = findViewById(R.id.idTVSelectedDate);
         SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         boolean isFirstLaunch = sharedPreferences.getBoolean("isFirstLaunch", true);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         if (isFirstLaunch) {
             // Show the landing page
@@ -92,6 +90,9 @@ public class FirstTimeOpen extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                editor.putString("mlada", mladaT.getText().toString());
+                editor.putString("mladozenja", mladozenjaT.getText().toString());
+                editor.apply();
 
                 String mladaValue = mladaT.getText().toString();
                 String mladozenjaValue = mladozenjaT.getText().toString();

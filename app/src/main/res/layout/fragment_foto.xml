@@ -26,10 +26,11 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="0dp"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/now_regular"
         android:maxLines="2"
         android:text="Odaberite foto studio i paket koji Vam najviše odgovara"
         android:textSize="18sp"
