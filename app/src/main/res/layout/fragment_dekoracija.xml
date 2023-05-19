@@ -20,11 +20,12 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/now_regular"
         android:text="Odaberite dekoraciju salona koja Vam najviše odgovara"
+        android:textColor="#fff"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:fontFamily="@font/now_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,6 +33,7 @@
         android:id="@+id/cena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#fff"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="123dp"
         android:textSize="16sp"

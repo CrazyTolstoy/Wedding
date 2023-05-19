@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent"/> <!-- Transparent background -->
+    <stroke
+        android:width="3dp"
+        android:color="#FFf"/> <!-- Border color (e.g., red) -->
+    <corners android:radius="50dp"/> <!-- Corner radius in dp -->
+</shape>
+

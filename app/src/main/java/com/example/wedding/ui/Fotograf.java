@@ -28,6 +28,7 @@ public class Fotograf extends Fragment {
     private RecyclerView recyclerView;
     private List<Integer> imageList;
     private FragmentFotoBinding binding;
+    private TextView cijena;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class Fotograf extends Fragment {
 
         recyclerView = root.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-
+        cijena = root.findViewById(R.id.cena);
 
         recyclerView.setVisibility(root.INVISIBLE);
         Spinner spinner = root.findViewById(R.id.spinner);
@@ -58,12 +59,23 @@ public class Fotograf extends Fragment {
                     case 1:
                         recyclerView.setVisibility(root.VISIBLE);
                         imageList = new ArrayList<>();
-                        imageList.add(R.drawable.foto);
+                        imageList.add(R.drawable.fs3);
+                        imageList.add(R.drawable.fs2);
+                        imageList.add(R.drawable.fs1);
                         ImageAdapter.OnItemClickListener itemClickListener1 = new ImageAdapter.OnItemClickListener() {
                             @Override
                             public void onItemClick(int imageId) {
-                                Toast.makeText(getActivity(), "Neispravni podaci za polje 'Godina'!"+imageId, Toast.LENGTH_LONG).show();
-                            }
+                                switch (imageId) {
+                                    case R.drawable.fs1:
+                                        cijena.setText("Cijena: 330 KM");
+                                        break;
+                                    case R.drawable.fs2:
+                                        cijena.setText("Cijena: 280 KM");
+                                        break;
+                                    case R.drawable.fs3:
+                                        cijena.setText("Cijena: 220 KM");
+                                        break;
+                                } }
                         };
                          adapter = new ImageAdapter(imageList, itemClickListener1);
                         recyclerView.setAdapter(adapter);
@@ -72,15 +84,23 @@ public class Fotograf extends Fragment {
                     case 2:
                         recyclerView.setVisibility(root.VISIBLE);
                         imageList = new ArrayList<>();
-                        imageList.add(R.drawable.salon3);
-                        imageList.add(R.drawable.salon1);
-                        imageList.add(R.drawable.salon2);
-                        imageList.add(R.drawable.salon3);
-                        imageList.add(R.drawable.salon4);
+                        imageList.add(R.drawable.ft3);
+                        imageList.add(R.drawable.ft2);
+                        imageList.add(R.drawable.ft1);
                         ImageAdapter.OnItemClickListener itemClickListener2 = new ImageAdapter.OnItemClickListener() {
                             @Override
                             public void onItemClick(int imageId) {
-                                Toast.makeText(getActivity(), "Neispravni podaci za polje 'Godina'!"+imageId, Toast.LENGTH_LONG).show();
+                                switch (imageId) {
+                                    case R.drawable.ft3:
+                                        cijena.setText("Cijena: 230 KM");
+                                        break;
+                                    case R.drawable.ft2:
+                                        cijena.setText("Cijena: 290 KM");
+                                        break;
+                                    case R.drawable.ft1:
+                                        cijena.setText("Cijena: 340 KM");
+                                        break;
+                                }
                             }
                         };
                          adapter = new ImageAdapter(imageList, itemClickListener2);
@@ -91,10 +111,6 @@ public class Fotograf extends Fragment {
                         recyclerView.setVisibility(root.VISIBLE);
                         imageList = new ArrayList<>();
                         imageList.add(R.drawable.salon2);
-                        imageList.add(R.drawable.salon1);
-                        imageList.add(R.drawable.salon2);
-                        imageList.add(R.drawable.salon3);
-                        imageList.add(R.drawable.salon4);
                         ImageAdapter.OnItemClickListener itemClickListener3 = new ImageAdapter.OnItemClickListener() {
                             @Override
                             public void onItemClick(int imageId) {
@@ -106,7 +122,6 @@ public class Fotograf extends Fragment {
                         break;
 
                     default:
-                        // do something for other items
                         break;
                 }
             }

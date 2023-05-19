@@ -11,10 +11,17 @@
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="text1">Velika nam je čast i zadovoljstvo što će baš naša aplikacija da vaš dan učini posebnim i nezaboravnim.</string>
+    <string name="text2">Weedie aplikacija - vaš savršeni saveznik za organizaciju vjenčanja, pružajući vam jednostavnost, efikasnost i dozu magije za stvaranje nevjerovatnih uspomena.</string>
     <string-array name="foto_radnje">
         <item>- - - - - - - - -</item>
         <item>Foto Stanko</item>
         <item>Foto Tomić</item>
         <item>4Pixel Studio</item>
     </string-array>
+    <string-array name="garderoba">
+    <item>- - - - - - - - -</item>
+    <item>Mlada</item>
+    <item>Mladoženja</item>
+</string-array>
 </resources>

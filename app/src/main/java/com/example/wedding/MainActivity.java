@@ -1,15 +1,21 @@
 package com.example.wedding;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -56,7 +62,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             finish();
             System.exit(0);
         } else if (id == R.id.reset) {
-            Toast.makeText(MainActivity.this, "Potrebno je popuniti sva polja", Toast.LENGTH_SHORT).show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Reset");
+            builder.setMessage("Svi podaci će biti izbrisani. Da li ste sigurni da želite izvršiti reset?");
+
+            builder.setPositiveButton("Da", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("isFirstLaunch", true);
+                    editor.apply();
+                    startActivity(new Intent(MainActivity.this, FirstTimeOpen.class));
+                    finish();
+                }
+            });
+            builder.setNegativeButton("Ne", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Code to execute when "No" button is clicked
+                    // ...
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.setOnShowListener( new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface arg0) {
+                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.WHITE);
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.WHITE);
+                }
+            });
+            dialog.show();
+
+
+
         } else {
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
             navController.navigate(id); // Navigate to the selected fragment

@@ -53,28 +53,28 @@ public class Sala extends Fragment {
                 if (previousImageId != imageId) {
                     switch (imageId) {
                         case R.drawable.s6:
-                            cijena.setText("Cijena: 200 KM");
+                            cijena.setText("Cijena: 2000 KM");
                             break;
                         case R.drawable.s7:
-                            cijena.setText("Cijena: 210 KM");
+                            cijena.setText("Cijena: 2100 KM");
                             break;
                         case R.drawable.s8:
-                            cijena.setText("Cijena: 220 KM");
+                            cijena.setText("Cijena: 2200 KM");
                             break;
                         case R.drawable.s9:
-                            cijena.setText("Cijena: 190 KM");
+                            cijena.setText("Cijena: 1900 KM");
                             break;
                         case R.drawable.s10:
-                            cijena.setText("Cijena: 400 KM");
+                            cijena.setText("Cijena: 4000 KM");
                             break;
                         case R.drawable.s11:
-                            cijena.setText("Cijena: 215 KM");
+                            cijena.setText("Cijena: 2150 KM");
                             break;
                         case R.drawable.s12:
-                            cijena.setText("Cijena: 230 KM");
+                            cijena.setText("Cijena: 2300 KM");
                             break;
                         case R.drawable.s13:
-                            cijena.setText("Cijena: 300 KM");
+                            cijena.setText("Cijena: 3000 KM");
                             break;
                     }
                     previousImageId = imageId;

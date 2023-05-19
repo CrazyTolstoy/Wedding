@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -53,6 +54,14 @@ public class FirstTimeOpen extends AppCompatActivity {
         pickDateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                View currentFocusView = getCurrentFocus();
+
+                if (currentFocusView instanceof EditText) {
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                    imm.hideSoftInputFromWindow(currentFocusView.getWindowToken(), 0);
+                }
+
                 // on below line we are getting
                 // the instance of our calendar.
                 final Calendar c = Calendar.getInstance();
@@ -66,7 +75,7 @@ public class FirstTimeOpen extends AppCompatActivity {
                 // on below line we are creating a variable for date picker dialog.
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
                         // on below line we are passing context.
-                        FirstTimeOpen.this,
+                        FirstTimeOpen.this,R.style.CustomDatePickerDialogTheme,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year,
@@ -90,6 +99,7 @@ public class FirstTimeOpen extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 editor.putString("mlada", mladaT.getText().toString());
                 editor.putString("mladozenja", mladozenjaT.getText().toString());
                 editor.apply();
