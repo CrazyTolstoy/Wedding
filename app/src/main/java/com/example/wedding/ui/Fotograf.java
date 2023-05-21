@@ -110,17 +110,51 @@ public class Fotograf extends Fragment {
                     case 3:
                         recyclerView.setVisibility(root.VISIBLE);
                         imageList = new ArrayList<>();
-                        imageList.add(R.drawable.salon2);
+                        imageList.add(R.drawable.ff1);
+                        imageList.add(R.drawable.ff2);
+                        imageList.add(R.drawable.ff3);
                         ImageAdapter.OnItemClickListener itemClickListener3 = new ImageAdapter.OnItemClickListener() {
                             @Override
                             public void onItemClick(int imageId) {
-                                Toast.makeText(getActivity(), "Neispravni podaci za polje 'Godina'!"+imageId, Toast.LENGTH_LONG).show();
-                            }
+                                switch (imageId) {
+                                    case R.drawable.ff1:
+                                        cijena.setText("Cijena: 230 KM");
+                                        break;
+                                    case R.drawable.ff2:
+                                        cijena.setText("Cijena: 290 KM");
+                                        break;
+                                    case R.drawable.ff3:
+                                        cijena.setText("Cijena: 340 KM");
+                                        break;
+                                }  }
                         };
                          adapter = new ImageAdapter(imageList, itemClickListener3);
                         recyclerView.setAdapter(adapter);
                         break;
-
+                    case 4:
+                        recyclerView.setVisibility(root.VISIBLE);
+                        imageList = new ArrayList<>();
+                        imageList.add(R.drawable.fsh1);
+                        imageList.add(R.drawable.fsh2);
+                        imageList.add(R.drawable.fsh3);
+                        ImageAdapter.OnItemClickListener itemClickListener4 = new ImageAdapter.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(int imageId) {
+                                switch (imageId) {
+                                    case R.drawable.fsh1:
+                                        cijena.setText("Cijena: 270 KM");
+                                        break;
+                                    case R.drawable.fsh2:
+                                        cijena.setText("Cijena: 290 KM");
+                                        break;
+                                    case R.drawable.fsh3:
+                                        cijena.setText("Cijena: 350 KM");
+                                        break;
+                                }  }
+                        };
+                        adapter = new ImageAdapter(imageList, itemClickListener4);
+                        recyclerView.setAdapter(adapter);
+                        break;
                     default:
                         break;
                 }

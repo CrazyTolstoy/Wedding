@@ -51,6 +51,26 @@ public class FirstTimeOpen extends AppCompatActivity {
             finish();
         }
 
+        mladaT.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus) {
+                    mladaT.setHint("");
+                } else {
+                    mladaT.setHint("Mlada");
+                }
+            }
+        });
+        mladozenjaT.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus) {
+                    mladozenjaT.setHint("");
+                } else {
+                    mladozenjaT.setHint("Mladoženja");
+                }
+            }
+        });
         pickDateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

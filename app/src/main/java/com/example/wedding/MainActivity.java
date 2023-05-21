@@ -59,8 +59,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.exit) {
-            finish();
-            System.exit(0);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Izlaz");
+            builder.setMessage("Da li ste sigurni da želite da napustite aplikaciju?");
+
+            builder.setPositiveButton("Da", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                    System.exit(0);
+                }
+            });
+            builder.setNegativeButton("Ne", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Code to execute when "No" button is clicked
+                    // ...
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.setOnShowListener( new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface arg0) {
+                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.WHITE);
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.WHITE);
+                }
+            });
+            dialog.show();
+
         } else if (id == R.id.reset) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Reset");
